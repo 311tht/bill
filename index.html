@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #canvas {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bill</h1>
+    <form id="billForm">
+        <label for="name">Tên Người Nhận:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="amount">Số Tiền Chuyển:</label>
+        <input type="text" id="amount" name="amount" required><br><br>
+
+        <label for="bank">Ngân Hàng Nhận:</label>
+        <!-- <input type="text" id="bank" name="bank" required><br><br> -->
+        <select id="bankSelect" onchange="updateBankName()">
+            <option value="">Chọn ngân hàng</option>
+            <option value="VietinBank">VietinBank</option>
+            <option value="BIDV">BIDV</option>
+            <option value="Vietcombank">Vietcombank</option>
+            <option value="ACB">ACB</option>
+            <option value="ABBANK">ABBANK</option>
+            <option value="Viet Capital Bank">Viet Capital Bank</option>
+            <option value="BAOVIET Bank">BAOVIET Bank</option>
+            <option value="Bac A Bank">Bac A Bank</option>
+            <option value="LienVietPostBank">LienVietPostBank</option>
+            <option value="PVcomBank">PVcomBank</option>
+            <option value="DongA Bank">DongA Bank</option>
+            <option value="SeABank">SeABank</option>
+            <option value="MSB">MSB</option>
+            <option value="Kienlongbank">Kienlongbank</option>
+            <option value="Techcombank">Techcombank</option>
+            <option value="Nam A Bank">Nam A Bank</option>
+            <option value="OCB">OCB</option>
+            <option value="MB">MB</option>
+            <option value="VIB">VIB</option>
+            <option value="NCB">NCB</option>
+            <option value="SCB">SCB</option>
+            <option value="SAIGONBANK">SAIGONBANK</option>
+            <option value="SHB">SHB</option>
+            <option value="Sacombank">Sacombank</option>
+            <option value="TPBank">TPBank</option>
+            <option value="VietABank">VietABank</option>
+            <option value="VPBank">VPBank</option>
+            <option value="Vietbank">Vietbank</option>
+            <option value="PG Bank">PG Bank</option>
+            <option value="Eximbank">Eximbank</option>
+            <option value="HDBank">HDBank</option>
+        </select>
+        <br>
+        <br>
+        <label for="account">Số Tài Khoản:</label>
+        <input type="text" id="account" name="account" required><br><br>
+
+        <input type="button" value="Tạo Bill" onclick="generateBill()">
+    </form>
+
+    <h2>Kết quả:</h2>
+
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <button onclick="downloadImage()">Download Image</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
